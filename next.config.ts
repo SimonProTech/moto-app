@@ -1,19 +1,23 @@
 import type { NextConfig } from "next";
+const env = process.env.NODE_ENV;
 
 const nextConfig: NextConfig = {
   async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/coming-soon",
-        permanent: false,
-      },
-      {
-        source: "/coming-soon/:slug+",
-        destination: "/coming-soon",
-        permanent: false,
-      },
-    ];
+    if (env === "production") {
+      return [
+        {
+          source: "/",
+          destination: "/coming-soon",
+          permanent: false,
+        },
+        {
+          source: "/coming-soon/:slug+",
+          destination: "/coming-soon",
+          permanent: false,
+        },
+      ];
+    }
+    return [];
   },
   /* config options here */
 };
