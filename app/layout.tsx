@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, TASA_Orbiter } from "next/font/google";
+import { TASA_Orbiter } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "sonner";
+import QueryClientProviderWrapper from "@/app/providers/QueryClientProviderWrapper";
 
 const tasaOrbiter = TASA_Orbiter({
   variable: "--font-tasa",
@@ -19,7 +21,12 @@ export default function RootLayout({
 }>) {
   return (
     <html className={`${tasaOrbiter.variable} antialiased`} lang="pl">
-      <body>{children}</body>
+      <body>
+        <main>
+          <QueryClientProviderWrapper>{children}</QueryClientProviderWrapper>
+          <Toaster />
+        </main>
+      </body>
     </html>
   );
 }
