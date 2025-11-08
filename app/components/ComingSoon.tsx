@@ -26,19 +26,19 @@ export const ComingSoon = () => {
                   <AvatarImage
                     src={`${process.env.NEXT_PUBLIC_HOST_NAME}/assets/coming-soon-images/avatar-face-1.jpg`}
                   />
-                  <AvatarFallback>F1</AvatarFallback>
+                  <AvatarFallback>Face one ai</AvatarFallback>
                 </Avatar>
                 <Avatar className="border-2 border-ring">
                   <AvatarImage
                     src={`${process.env.NEXT_PUBLIC_HOST_NAME}/assets/coming-soon-images/avatar-face-3.jpg`}
                   />
-                  <AvatarFallback>F2</AvatarFallback>
+                  <AvatarFallback>Face two ai</AvatarFallback>
                 </Avatar>
                 <Avatar className="border-2 border-ring">
                   <AvatarImage
                     src={`${process.env.NEXT_PUBLIC_HOST_NAME}/assets/coming-soon-images/avatar-face-2.jpg`}
                   />
-                  <AvatarFallback>F3</AvatarFallback>
+                  <AvatarFallback>Face three ai</AvatarFallback>
                 </Avatar>
               </div>
               <small className="ml-auto italic">Zapisz się już teraz!</small>
