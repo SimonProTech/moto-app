@@ -36,6 +36,7 @@ export const TripDetailsLocationInfoWrapper = ({
           metaLat={metaLat}
           metaLon={metaLon}
           startLon={startLon}
+          moto_ride_types={moto_ride_types}
         />
 
         <TripDetailsLocationSection
