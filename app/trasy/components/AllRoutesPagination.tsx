@@ -52,7 +52,6 @@ const AllRoutesPagination = ({ pageSize, count }: AllRoutesPaginationProps) => {
         <PaginationContent>
           {smartPagination().map((p, i) => {
             const page = i + 1;
-            console.log(i);
             return (
               <PaginationItem key={i}>
                 {p === "ellipsis" ? (

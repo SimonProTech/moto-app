@@ -21,17 +21,17 @@ const MapWrapper = ({
   startLon,
   startLat,
 }: MapWrapperProps) => {
-  const positions = ["52.2297", "21.0122"];
   const startIcon = useMapIcon({
     categoryUrl: "/assets/mapIcons/startIcon.svg",
   });
   const metaIcon = useMapIcon({
     categoryUrl: "/assets/mapIcons/metaIcon.svg",
   });
+
   return (
     <MapContainer
       className="h-full w-full"
-      center={[+positions[0], +positions[1]]}
+      center={[+startLat, +startLon]}
       zoom={10}
       scrollWheelZoom={false}
       maxZoom={12}
