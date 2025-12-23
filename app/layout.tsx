@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { TASA_Orbiter } from "next/font/google";
+import { Playfair_Display, TASA_Orbiter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 import QueryClientProviderWrapper from "@/app/providers/QueryClientProviderWrapper";
 
 const tasaOrbiter = TASA_Orbiter({
+  variable: "--font-tasa",
+  subsets: ["latin"],
+  weight: ["500", "600", "400", "700", "800"],
+});
+
+const playfairDisplay = Playfair_Display({
   variable: "--font-tasa",
   subsets: ["latin"],
   weight: ["500", "600", "400", "700", "800"],
@@ -20,8 +26,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className={`${tasaOrbiter.variable} antialiased`} lang="pl">
-      <body>
+    <html
+      className={`${tasaOrbiter.variable} ${playfairDisplay.variable} antialiased`}
+      lang="pl"
+    >
+      <body className="relative scroll-smooth">
         <main>
           <QueryClientProviderWrapper>{children}</QueryClientProviderWrapper>
           <Toaster />
