@@ -5,93 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2af78e0-0936-45fe-9ab7-c96a12e1ccd5" name="Changes" comment="input ready">
-      <change afterPath="$PROJECT_DIR$/app/components/ImageSlider.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/Wrapper.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/header/Header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/header/HeaderLinks.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/header/Logo.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/main-page/AllRoutesSkeletons.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/main-page/FeatureGrid.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/main-page/LandingPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/main-page/LandingPageMarquee.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/main-page/LatestAdded.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/main-page/LatestAddedTrips.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/main-page/Route.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/main-page/SliderWrapper.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/hooks/useFilter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/hooks/useIcon.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/hooks/useMapIcon.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/hooks/useMultiFilter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/hooks/usePaginatedRoutes.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/store/countRoutes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/store/imageSlider.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasa/[...slug]/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasa/[...slug]/loading.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasa/[...slug]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasa/components/BreadCrumbTripDetail.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasa/components/MapWrapper.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasa/components/MapWrapperSkeleton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasa/components/TripDetailsLocationInfoMapWrapper.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasa/components/TripDetailsLocationInfoWrapper.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasa/components/TripDetailsLocationSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasa/components/TripDetailsMiddleSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasa/components/TripDetailsTopHeader.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasa/components/TripMotoRideDescription.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasa/helpers/MOTO_RIDE_DESCRIPTIONS.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasy/components/AllRoutesPagination.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasy/components/AllTrips.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasy/components/FilterDifficultiesGrid.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasy/components/FilterDistance.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasy/components/FilterHeader.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasy/components/FilterLeftPanel.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasy/components/FilterLvl.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasy/components/FilterRegionGrid.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasy/components/FilterRegions.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasy/components/FilterRightPanel.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasy/components/FilterStyle.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasy/components/FilterStyleGrid.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasy/components/FilterStyleIcons.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasy/components/FilterSurface.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasy/components/FilterTripTime.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasy/components/FiltersAndDataWrapper.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasy/components/TripCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/trasy/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/changeNawierzchnia.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/fetchers/fetchDifficulty.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/fetchers/fetchMotoStyle.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/fetchers/fetchRegions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/fetchers/fetchRoutes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/fetchers/fetchSingleRoute.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/formData.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/toHoursAndMinutes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/tripsImageByCategory.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/usePersistStore/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/header/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/landing-page/moto-marq.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/landing-page/moto-marquee.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/landing-page/photo-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/landing-page/photo-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/landing-page/photo-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/landing-page/photo-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/landing-page/trip-marquee.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/mapIcons/metaIcon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/mapIcons/startIcon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/routes/asfalt.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/routes/asfaltMix.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/routes/asfaltMountain.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/routes/mixroad.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/types/app.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/coming-soon/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/coming-soon/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/coming-soon/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/coming-soon/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/ComingSoon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/coming-soon/components/ComingSoon.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/not-found.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/not-found.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/supabase/client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/supabase/client.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,11 +36,11 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="dev" />
-                    <option name="lastUsedInstant" value="1762686320" />
+                    <option name="lastUsedInstant" value="1766515186" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1762619378" />
+                    <option name="lastUsedInstant" value="1766515051" />
                   </RecentBranch>
                 </list>
               </option>
@@ -219,6 +133,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.build" />
         <item itemvalue="npm.build" />
         <item itemvalue="npm.build" />
