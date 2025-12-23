@@ -7,12 +7,17 @@ import { TileLayer } from "react-leaflet/TileLayer";
 import { Marker, Popup } from "react-leaflet";
 import { MapContainer } from "react-leaflet/MapContainer";
 import { useMapIcon } from "@/app/hooks/useMapIcon";
+import { surfaceGradients } from "@/app/trasy/components/TripCard";
+import { MotoRideName } from "@/types/app";
 
 interface MapWrapperProps {
   startLat: number;
   startLon: number;
   metaLat: number;
   metaLon: number;
+  moto_ride_types: {
+    moto_ride: MotoRideName;
+  };
 }
 
 const MapWrapper = ({
@@ -20,12 +25,17 @@ const MapWrapper = ({
   metaLon,
   startLon,
   startLat,
+  moto_ride_types,
 }: MapWrapperProps) => {
+  const gradient = surfaceGradients[moto_ride_types.moto_ride];
+
   const startIcon = useMapIcon({
     categoryUrl: "/assets/mapIcons/startIcon.svg",
+    gradient,
   });
   const metaIcon = useMapIcon({
     categoryUrl: "/assets/mapIcons/metaIcon.svg",
+    gradient,
   });
 
   return (

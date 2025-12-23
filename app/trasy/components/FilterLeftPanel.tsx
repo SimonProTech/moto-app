@@ -6,6 +6,7 @@ import FilterTripTime from "@/app/trasy/components/FilterTripTime";
 import { FilterSurface } from "@/app/trasy/components/FilterSurface";
 import FilterHeader from "@/app/trasy/components/FilterHeader";
 import { FilterDistance } from "@/app/trasy/components/FilterDistance";
+import FilterResetButton from "@/app/trasy/components/FilterResetButton";
 
 const FilterLeftPanel = () => {
   return (
@@ -17,6 +18,7 @@ const FilterLeftPanel = () => {
       <FilterStyle />
       <FilterTripTime />
       <FilterSurface />
+      <FilterResetButton />
     </div>
   );
 };
