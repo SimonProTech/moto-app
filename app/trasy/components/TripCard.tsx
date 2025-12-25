@@ -34,7 +34,7 @@ const TripCard = ({ route, layout }: TripCardProps) => {
       key={route.id}
     >
       <div
-        className={`relative w-full flex gap-2 flex-col items-center ${layout === "grid" ? "aspect-video" : "p-6"}  rounded-lg overflow-hidden bg-gradient-to-br ${surfaceGradients[route.moto_ride_types.moto_ride]} flex items-center justify-center`}
+        className={`relative w-full flex gap-2 flex-col items-center ${layout === "grid" ? "md:aspect-video h-[200px]" : "p-6"}  rounded-lg overflow-hidden bg-gradient-to-br ${surfaceGradients[route.moto_ride_types.moto_ride]} flex items-center justify-center`}
       >
         {styleIcons[route.moto_ride_types.moto_ride] && (
           <span className="text-my-white">

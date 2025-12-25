@@ -32,8 +32,6 @@ export async function fetchSingleRoute({
       .limit(1)
       .single();
 
-  console.log(error);
-
   // error code for no data
   if (error?.code === "PGRST116") {
     return null;

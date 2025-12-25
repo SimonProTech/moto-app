@@ -10,7 +10,7 @@ import FilterResetButton from "@/app/trasy/components/FilterResetButton";
 
 const FilterLeftPanel = () => {
   return (
-    <div className="flex flex-col gap-10 pb-10">
+    <div className="routes:flex hidden lg:flex-col lg:gap-10 lg:pb-10">
       <FilterHeader />
       <FilterRegions />
       <FilterLvl />

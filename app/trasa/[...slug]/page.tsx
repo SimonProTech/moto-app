@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { fetchSingleRoute } from "@/helpers/fetchers/fetchSingleRoute";
 import { notFound } from "next/navigation";
 import { BreadCrumbTripDetail } from "@/app/trasa/components/BreadCrumbTripDetail";
