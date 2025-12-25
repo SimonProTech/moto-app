@@ -1,8 +1,8 @@
 import * as React from "react";
 import {
   ChevronLeftIcon,
-  ChevronRightIcon,
   MoreHorizontalIcon,
+  MotorbikeIcon,
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -27,7 +27,7 @@ function PaginationContent({
   return (
     <ul
       data-slot="pagination-content"
-      className={cn("flex flex-row items-center gap-1", className)}
+      className={cn("flex flex-row items-center gap-2", className)}
       {...props}
     />
   );
@@ -40,16 +40,16 @@ function PaginationItem({ ...props }: React.ComponentProps<"li">) {
 type PaginationLinkProps = {
   isActive?: boolean;
 } & Pick<React.ComponentProps<typeof Button>, "size"> &
-  React.ComponentProps<typeof Button>;
+  React.ComponentProps<"a">;
 
-function PaginationButton({
+function PaginationLink({
   className,
   isActive,
   size = "icon",
   ...props
 }: PaginationLinkProps) {
   return (
-    <Button
+    <a
       aria-current={isActive ? "page" : undefined}
       data-slot="pagination-link"
       data-active={isActive}
@@ -68,34 +68,40 @@ function PaginationButton({
 function PaginationPrevious({
   className,
   ...props
-}: React.ComponentProps<typeof PaginationButton>) {
+}: React.ComponentProps<typeof PaginationLink>) {
   return (
-    <PaginationButton
+    <PaginationLink
       aria-label="Go to previous page"
       size="default"
-      className={cn("gap-1 px-2.5 sm:pl-2.5", className)}
+      className={cn(
+        "gap-1 border hover:bg-ring transition-all border-gray-border px-2.5 sm:pl-2.5",
+        className,
+      )}
       {...props}
     >
       <ChevronLeftIcon />
-      <span className="hidden sm:block">Previous</span>
-    </PaginationButton>
+      <span className="hidden sm:block">Wracam</span>
+    </PaginationLink>
   );
 }
 
 function PaginationNext({
   className,
   ...props
-}: React.ComponentProps<typeof PaginationButton>) {
+}: React.ComponentProps<typeof PaginationLink>) {
   return (
-    <PaginationButton
+    <PaginationLink
       aria-label="Go to next page"
       size="default"
-      className={cn("gap-1 px-2.5 sm:pr-2.5", className)}
+      className={cn(
+        `gap-2 px-2.5 hover:bg-ring border border-gray-border sm:pr-2.5`,
+        className,
+      )}
       {...props}
     >
-      <span className="hidden sm:block">Next</span>
-      <ChevronRightIcon />
-    </PaginationButton>
+      <span className="hidden sm:block">Jadę dalej</span>
+      <MotorbikeIcon />
+    </PaginationLink>
   );
 }
 
@@ -119,7 +125,7 @@ function PaginationEllipsis({
 export {
   Pagination,
   PaginationContent,
-  PaginationButton,
+  PaginationLink,
   PaginationItem,
   PaginationPrevious,
   PaginationNext,
