@@ -18,7 +18,7 @@ const FilterTripTime = () => {
   return (
     <div>
       <h2 className="font-bold text-lg uppercase">czas trasy</h2>
-      <div className="grid grid-cols-2 mt-5 gap-2">
+      <div className="grid small:grid-cols-2 grid-cols-1 mt-5 gap-2">
         {timeRanges.map(({ label, value }, index) => {
           const normalizedV = value.toString().toLowerCase();
           const isActive = getCurrentParamUrl === value;

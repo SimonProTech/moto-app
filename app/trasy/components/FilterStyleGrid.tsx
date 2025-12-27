@@ -1,30 +1,33 @@
 "use client";
 
-import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { styleIcons } from "@/app/trasy/components/FilterStyleIcons";
 import { MOTO_RIDE_STYLE } from "@/types/app";
 import { useMultiFilter } from "@/app/hooks/useMultiFilter";
+import { useSelectableList } from "@/app/hooks/useSelectableList";
+import { FilterMoreThenOneSelectedButtons } from "@/app/trasy/components/FilterMoreThenOneSelectedButtons";
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 
 interface FilterStyleGridInterface {
   motoridestyles: MOTO_RIDE_STYLE[];
 }
-
 const FilterStyleGrid = ({ motoridestyles }: FilterStyleGridInterface) => {
   const { current, applyFn, clearSelectedFilter } = useMultiFilter("ride-type");
-  const [selected, setSelected] = useState<string[]>(current);
+  const { selected, setSelected, toggle, handleApply, reset } =
+    useSelectableList({
+      current,
+      applyFn,
+    });
+  const params = useSearchParams();
+  const hasParam = params.get("ride-type");
 
-  const toggle = (value: string) => {
-    if (current.includes(value)) return;
-    setSelected((prev) =>
-      prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value],
-    );
-  };
-
-  const handleApply = () => {
-    applyFn(selected);
-  };
+  useEffect(() => {
+    if (!hasParam) {
+      reset();
+    }
+  }, [hasParam]);
 
   return (
     <>
@@ -53,34 +56,14 @@ const FilterStyleGrid = ({ motoridestyles }: FilterStyleGridInterface) => {
       })}
 
       {selected.length ? (
-        <div
-          className={
-            selected
-              ? "col-span-2 flex flex-col items-center justify-between relative"
-              : "hidden"
-          }
-        >
-          <div className="flex justify-between relative w-full items-center gap-2">
-            <Button
-              size="sm"
-              onClick={handleApply}
-              className={`mt-2 ${current.length === 0 ? "w-full" : "w-[60%]"} bg-indigo-700 hover:bg-indigo-800 cursor-pointer`}
-            >
-              Zastosuj
-            </Button>
-            <Button
-              size="sm"
-              onClick={() => {
-                clearSelectedFilter();
-                setSelected([]);
-              }}
-              variant="destructive"
-              className={`mt-2 w-max ${current.length === 0 ? "hidden" : "block"} cursor-pointer`}
-            >
-              Wyczyść filtry
-            </Button>
-          </div>
-        </div>
+        <FilterMoreThenOneSelectedButtons
+          selected={selected}
+          current={current}
+          handleApply={handleApply}
+          clearSelectedFilter={clearSelectedFilter}
+          setSelected={setSelected}
+          reset={reset}
+        />
       ) : null}
     </>
   );

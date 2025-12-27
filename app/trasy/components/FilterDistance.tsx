@@ -18,7 +18,7 @@ export const FilterDistance = ({ className, ...props }: SliderProps) => {
   return (
     <div>
       <h2 className="font-bold text-lg uppercase">Długość trasy</h2>
-      <div className="grid grid-cols-2 mt-5 gap-2">
+      <div className="grid small:grid-cols-2 grid-cols-1 mt-5 gap-2">
         {["0-50", "51-100", "101-150"].map((distance, index) => {
           const value = distance.toString().toLowerCase();
           const isActive = getCurrentParamUrl === value;

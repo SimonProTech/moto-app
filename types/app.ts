@@ -95,3 +95,11 @@ export enum CHOOSE_LVL {
   Średnia,
   Wymagająca,
 }
+
+export interface FilterMobileViewProviderProps {
+  filters: {
+    regions: ROUTE_REGIONS[];
+    routeDifficulties: ROUTE_DIFFICULTIES[];
+    motoridestyles: MOTO_RIDE_STYLE[];
+  };
+}
