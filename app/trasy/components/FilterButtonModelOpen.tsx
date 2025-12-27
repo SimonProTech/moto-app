@@ -5,7 +5,7 @@ import { useOpenModel } from "@/app/store/openModal";
 import { SlidersHorizontal } from "lucide-react";
 
 export const FilterButtonModelOpen = () => {
-  const { setOpenModal, isModalOpen } = useOpenModel();
+  const { setOpenModal } = useOpenModel();
   return (
     <Button
       onClick={() => setOpenModal({ isModalOpen: true })}

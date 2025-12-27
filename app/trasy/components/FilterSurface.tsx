@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { SURFACES } from "@/types/app";
 import { useMultiFilter } from "@/app/hooks/useMultiFilter";
 import { useSelectableList } from "@/app/hooks/useSelectableList";

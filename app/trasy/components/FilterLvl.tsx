@@ -1,6 +1,5 @@
 import React from "react";
 import FilterDifficultiesGrid from "@/app/trasy/components/FilterDifficultiesGrid";
-import { fetchDifficulties } from "@/helpers/fetchers/fetchDifficulty";
 import { ROUTE_DIFFICULTIES } from "@/types/app";
 
 interface FilterLvlProps {

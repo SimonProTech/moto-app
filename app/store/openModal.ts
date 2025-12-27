@@ -10,7 +10,7 @@ interface OpenModelActionStore {
 }
 
 export const useOpenModel = create<ModelOpenStore & OpenModelActionStore>(
-  (setState, getState) => ({
+  (setState) => ({
     isModalOpen: false,
     setOpenModal: (modal) =>
       setState(() => ({
