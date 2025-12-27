@@ -2,6 +2,7 @@ import FilterRightPanel from "@/app/trasy/components/FilterRightPanel";
 import FilterLeftPanel from "@/app/trasy/components/FilterLeftPanel";
 import AllTrips from "@/app/trasy/components/AllTrips";
 import { fetchAllRoutes } from "@/helpers/fetchers/fetchRoutes";
+import React from "react";
 
 interface FiltersAndDataWrapperInterface {
   params: any;

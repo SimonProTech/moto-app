@@ -24,7 +24,7 @@ const Header = () => {
         <div className="flex items-center gap-7">
           <Link
             href="/trasy"
-            className="py-2 shadow-xl hover:scale-95 font-medium transition-all px-6 rounded-full border border-gray-border bg-ring duration-500 text-foreground"
+            className="py-2 shadow-2xl hover:scale-95 font-medium transition-all px-6 rounded-full border border-gray-border bg-ring duration-500 text-foreground"
           >
             Przeglądaj trasy
           </Link>

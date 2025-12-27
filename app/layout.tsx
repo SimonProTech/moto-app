@@ -3,6 +3,7 @@ import { Playfair_Display, TASA_Orbiter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 import QueryClientProviderWrapper from "@/app/providers/QueryClientProviderWrapper";
+import { FilterMobileWrapper } from "@/app/trasy/components/FilterMobileWrapper";
 
 const tasaOrbiter = TASA_Orbiter({
   variable: "--font-tasa",
@@ -31,6 +32,7 @@ export default function RootLayout({
       lang="pl"
     >
       <body className="relative scroll-smooth">
+        <FilterMobileWrapper />
         <main>
           <QueryClientProviderWrapper>{children}</QueryClientProviderWrapper>
           <Toaster />

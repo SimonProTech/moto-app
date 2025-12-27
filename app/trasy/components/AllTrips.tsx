@@ -22,7 +22,7 @@ const AllTrips = ({ routes, count }: AllTripsProps) => {
   }, [count]);
 
   return (
-    <div className="mt-5 p-5">
+    <div className="routes:mt-5 mt-12 routes:p-5 p-0">
       <div
         className={`${layout === "grid" ? "grid grid-cols-1 md:grid-cols-2 gap-5" : "flex flex-col space-y-5"}`}
       >
