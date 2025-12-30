@@ -85,6 +85,7 @@
     --radius-xl: calc(var(--radius) + 4px);
     --breakpoint-routes: 68rem;
     --breakpoint-small: 31rem;
+    --breakpoint-map: 930px;
 }
 
 * {

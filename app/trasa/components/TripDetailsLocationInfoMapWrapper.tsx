@@ -30,7 +30,7 @@ const TripDetailsLocationInfoMapWrapper = ({
   moto_ride_types,
 }: TripDetailsLocationInfoMapWrapperProps) => {
   return (
-    <div className="w-full col-span-2 h-[400px] border border-gray-border rounded-xl overflow-hidden mb-10">
+    <div className="w-full col-span-2 border relative border-gray-border rounded-xl mb-10">
       <TripDetailsMap
         startLon={startLon}
         metaLon={metaLon}

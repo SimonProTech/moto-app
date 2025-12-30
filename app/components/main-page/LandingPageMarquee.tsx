@@ -1,6 +1,7 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
 import Image from "next/image";
+import { Earth, Motorbike, SplinePointer } from "lucide-react";
 
 const INFO_MARQUEE = [
   { id: 1, text: "Odkrywaj trasy w całej Polsce" },
@@ -18,12 +19,12 @@ const INFO_MARQUEE = [
 
 const LandingPageMarquee = () => {
   return (
-    <section className="pt-44">
+    <section className="pt-52">
       <Marquee
         autoFill
         speed={50}
         gradientColor="#c7ffd8"
-        className="z-40 h-24 bg-ring rounded-full border-2 border-black cursor-default font-medium w-full text-foreground"
+        className="z-40 h-24 border border-black cursor-default font-medium w-full text-foreground"
       >
         <div className="flex items-center whitespace-nowrap text-[15px] md:text-base text-black/80">
           {INFO_MARQUEE.map((item) => (
@@ -35,10 +36,10 @@ const LandingPageMarquee = () => {
                 mx-6
                 px-5 py-1.5
                 rounded-full
-                bg-white/10
+                bg-ring
                 border
+                border-black
                 text-black
-                border-gray-700
                 text-sm md:text-base
                 font-light
                 shadow-md
@@ -49,21 +50,9 @@ const LandingPageMarquee = () => {
                 {item.text}
               </span>
               {item.id % 2 === 0 ? (
-                <Image
-                  alt="Motocrew"
-                  width={40}
-                  height={50}
-                  className="mx-4 pointer-events-none select-none"
-                  src="/assets/landing-page/moto-marq.svg"
-                />
+                <Motorbike size={42} />
               ) : (
-                <Image
-                  alt="Motocrew"
-                  width={40}
-                  height={50}
-                  className="mx-4 pointer-events-none select-none"
-                  src="/assets/landing-page/trip-marquee.svg"
-                />
+                <SplinePointer size={38} />
               )}
             </React.Fragment>
           ))}

@@ -162,6 +162,7 @@ export async function fetchLatestAddedRoutes(): Promise<RouteInterface[]> {
     .select(
       `
     *,
+    moto_ride_types!inner(moto_ride),
     route_difficulties ( * ),
     route_surfaces ( * ),
     route_regions ( * )

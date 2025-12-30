@@ -30,7 +30,7 @@ export const TripDetailsLocationInfoWrapper = ({
         Lokalizacja trasy
       </h2>
 
-      <div className="grid grid-cols-3 max-h-[400px] gap-6">
+      <div className="grid grid-cols-1 map:grid-cols-3 max-h-[400px] gap-6">
         <TripDetailsLocationInfoMapWrapper
           startLat={startLat}
           metaLat={metaLat}

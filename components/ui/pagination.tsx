@@ -1,6 +1,7 @@
 import * as React from "react";
 import {
   ChevronLeftIcon,
+  ChevronRightIcon,
   MoreHorizontalIcon,
   MotorbikeIcon,
 } from "lucide-react";
@@ -27,7 +28,7 @@ function PaginationContent({
   return (
     <ul
       data-slot="pagination-content"
-      className={cn("flex flex-row items-center gap-2", className)}
+      className={cn("flex flex-row items-center space-x-2", className)}
       {...props}
     />
   );
@@ -100,7 +101,8 @@ function PaginationNext({
       {...props}
     >
       <span className="hidden sm:block">Jadę dalej</span>
-      <MotorbikeIcon />
+      <MotorbikeIcon className="sm:block hidden" />
+      <ChevronRightIcon className="sm:hidden block" />
     </PaginationLink>
   );
 }
