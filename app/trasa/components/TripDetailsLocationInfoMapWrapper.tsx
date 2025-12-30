@@ -4,6 +4,8 @@ import dynamic from "next/dynamic";
 import MapWrapperSkeleton from "@/app/trasa/components/MapWrapperSkeleton";
 import React from "react";
 import { MotoRideName } from "@/types/app";
+import { LocateFixed } from "lucide-react";
+import { Button } from "@/components/ui/button";
 const TripDetailsMap = dynamic(
   () => import("@/app/trasa/components/MapWrapper"),
   {
@@ -30,7 +32,7 @@ const TripDetailsLocationInfoMapWrapper = ({
   moto_ride_types,
 }: TripDetailsLocationInfoMapWrapperProps) => {
   return (
-    <div className="w-full col-span-2 h-[400px] border border-gray-border rounded-xl overflow-hidden mb-10">
+    <div className="w-full col-span-2 border relative border-gray-border rounded-xl mb-10">
       <TripDetailsMap
         startLon={startLon}
         metaLon={metaLon}

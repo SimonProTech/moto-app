@@ -59,7 +59,6 @@ const FilterRightPanel = () => {
       <div className="routes:hidden sm:w-max w-full block z-[999]">
         <FilterButtonModelOpen />
       </div>
-      <Separator className="sm:hidden sm:my-0 my-5 block" />
       <div className="flex sm:flex-row sm:w-max w-full flex-col-reverse gap-5 items-center sm:ml-auto space-x-2">
         <div className="space-x-2">
           <Button

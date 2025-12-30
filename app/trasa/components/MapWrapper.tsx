@@ -2,14 +2,14 @@
 
 import "leaflet/dist/leaflet.css";
 
-import React from "react";
+import React, { useState } from "react";
 import { TileLayer } from "react-leaflet/TileLayer";
-import { Marker, Popup } from "react-leaflet";
+import { Marker, Popup, useMap } from "react-leaflet";
 import { MapContainer } from "react-leaflet/MapContainer";
 import { useMapIcon } from "@/app/hooks/useMapIcon";
 import { surfaceGradients } from "@/app/trasy/components/TripCard";
 import { MotoRideName } from "@/types/app";
-
+import { MapCenterButton } from "@/app/trasa/components/MapCenterButton";
 interface MapWrapperProps {
   startLat: number;
   startLon: number;
@@ -27,6 +27,10 @@ const MapWrapper = ({
   startLat,
   moto_ride_types,
 }: MapWrapperProps) => {
+  const [position, setPosition] = useState<[number, number]>([
+    +startLat,
+    +startLon,
+  ]);
   const gradient = surfaceGradients[moto_ride_types.moto_ride];
 
   const startIcon = useMapIcon({
@@ -39,29 +43,51 @@ const MapWrapper = ({
   });
 
   return (
-    <MapContainer
-      className="h-full w-full"
-      center={[+startLat, +startLon]}
-      zoom={10}
-      scrollWheelZoom={false}
-      maxZoom={12}
-      minZoom={5}
-    >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      <Marker icon={startIcon.icon} position={[startLat, startLon]}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
-      </Marker>
-      <Marker position={[metaLat, metaLon]} icon={metaIcon.icon}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
-      </Marker>
-    </MapContainer>
+    <div className="w-full h-[400px] overflow-hidden rounded-xl bg-red-300">
+      <MapContainer
+        className="h-full w-full   relative"
+        center={position}
+        zoom={9}
+        scrollWheelZoom={false}
+        maxZoom={11}
+        minZoom={6}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Marker icon={startIcon.icon} position={[startLat, startLon]}>
+          <Popup>
+            <div className="p-2 flex flex-col">
+              <div className="flex items-center gap-2">
+                <span className="text-lg">🏁</span>
+                <h3 className="text-base font-semibold text-gray-900">
+                  Punkt startowy
+                </h3>
+              </div>
+              <p className="text-sm text-gray-600 leading-snug">
+                To tutaj zaczyna się Twój przejazd. Idealny moment, by złapać
+                rytm i ruszyć.
+              </p>
+            </div>
+          </Popup>
+        </Marker>
+        <Marker position={[metaLat, metaLon]} icon={metaIcon.icon}>
+          <Popup>
+            <div className="p-2 flex flex-col">
+              <div className="flex items-center gap-2">
+                <span className="text-lg">🚀</span>
+                <h3 className="text-base font-semibold text-gray-900">Meta</h3>
+              </div>
+              <p className="text-sm text-gray-600 leading-snug">
+                Ostatni punkt na mapie. Droga za Tobą, wspomnienia przed Tobą.
+              </p>
+            </div>
+          </Popup>
+        </Marker>
+        <MapCenterButton position={position} />
+      </MapContainer>
+    </div>
   );
 };
 
