@@ -18,9 +18,9 @@ const TripDetailsLocationSection = ({
 }: TripDetailsLocationSectionProps) => {
   const gradient = surfaceGradients[moto_ride_types.moto_ride];
   return (
-    <div className="p-6 rounded-xl max-h-[400px] bg-white">
+    <div className="sm:p-6 p-0 rounded-xl max-h-[400px] bg-white">
       {/* Timeline wrapper */}
-      <div className="relative pl-10 h-full  flex flex-col justify-between space-y-10">
+      <div className="relative pl-10 h-full flex flex-col justify-between space-y-10">
         {/* Jedna pionowa linia */}
         <div className="absolute left-4 top-6 z-50 bottom-0 w-[2px] bg-muted rounded-full" />
 
@@ -45,10 +45,10 @@ const TripDetailsLocationSection = ({
         <div className="relative flex ml-5 items-start gap-4">
           <div className="absolute -left-11 z-20 w-6 top-6 h-[2px] bg-gray-200" />
           <div className="space-y-1">
-            <p className="text-sm font-semibold text-foreground">
+            <p className="map:text-sm text-sm sm:text-lg font-semibold text-foreground">
               Atrakcje po drodze
             </p>
-            <p className="text-xs text-muted-foreground">
+            <p className="map:text-xs text-sm sm:text-md text-muted-foreground">
               Małe wioski, punkty widokowe, lokalne ciekawostki i klimatyczne
               miejsca.
             </p>

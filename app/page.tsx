@@ -13,7 +13,9 @@ export default function Home() {
       <Wrapper>
         <Header />
         <LandingPage />
-        <LandingPageMarquee />
+      </Wrapper>
+      <LandingPageMarquee />
+      <Wrapper>
         <FeatureGrid />
         <LatestAddedTrips />
       </Wrapper>

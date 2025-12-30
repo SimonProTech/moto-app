@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed w-full ${isPathValid ? "bg-black/90" : "bg-white border-b border-gray-border"} z-[9999] top-0 left-0`}
+      className={`fixed  w-full ${isPathValid ? "bg-black/90" : "bg-white border-b border-gray-border"} z-[9999999999] top-0 left-0`}
     >
       <div
         className={`py-5 mx-auto max-w-[1150px] pl-5 pr-5 text-my-white flex justify-between items-center`}
@@ -38,4 +38,3 @@ const Header = () => {
 };
 
 export default Header;
-//box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;

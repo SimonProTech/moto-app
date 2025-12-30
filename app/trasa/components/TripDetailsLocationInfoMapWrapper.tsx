@@ -4,8 +4,6 @@ import dynamic from "next/dynamic";
 import MapWrapperSkeleton from "@/app/trasa/components/MapWrapperSkeleton";
 import React from "react";
 import { MotoRideName } from "@/types/app";
-import { LocateFixed } from "lucide-react";
-import { Button } from "@/components/ui/button";
 const TripDetailsMap = dynamic(
   () => import("@/app/trasa/components/MapWrapper"),
   {

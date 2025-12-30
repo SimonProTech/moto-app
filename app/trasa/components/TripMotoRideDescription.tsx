@@ -12,8 +12,12 @@ export const MotoRideDescription = ({ type }: MotoRideDescriptionProps) => {
 
   return (
     <div className="space-y-1">
-      <p className="text-sm font-semibold text-foreground">{data.title}</p>
-      <p className="text-xs text-muted-foreground">{data.text}</p>
+      <p className="map:text-sm text-sm sm:text-lg font-semibold text-foreground">
+        {data.title}
+      </p>
+      <p className="map:text-xs text-sm sm:text-md text-muted-foreground">
+        {data.text}
+      </p>
     </div>
   );
 };

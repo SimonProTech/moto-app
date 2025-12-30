@@ -1,17 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { LocateFixed } from "lucide-react";
-import React from "react";
+import React, { memo } from "react";
 import { useMap } from "react-leaflet";
 
 interface MapCenterButtonProps {
   position: [number, number];
 }
 
-export const MapCenterButton = ({ position }: MapCenterButtonProps) => {
+export const MapCenterButton = memo(({ position }: MapCenterButtonProps) => {
   const map = useMap();
-  const centerMeOnMap = () => {
-    return map.flyTo(position);
-  };
+  const centerMeOnMap = () => map.flyTo(position);
   return (
     <Button
       onClick={centerMeOnMap}
@@ -21,4 +19,4 @@ export const MapCenterButton = ({ position }: MapCenterButtonProps) => {
       <LocateFixed />
     </Button>
   );
-};
+});
