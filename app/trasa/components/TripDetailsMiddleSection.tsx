@@ -21,7 +21,7 @@ const TripDetailsMiddleSection = ({
   const normalizedSurface = changeNawierzchnia(surface.surface);
   return (
     <div className="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-4 mt-20 justify-around gap-5 lg:gap-10 items-center w-full">
-      <div className="flex justify-center font-semibold items-center gap-3 special-detail_page-shadow py-6 rounded-full text-center w-full">
+      <div className="flex justify-center font-semibold items-center gap-3 shadow-lg border-1 border-gray-200 py-6 rounded-full text-center w-full">
         <Timer className="text-orange-500" size={30} />
         {hours === 0 ? (
           <>{minutes} min</>
@@ -31,15 +31,15 @@ const TripDetailsMiddleSection = ({
           </>
         )}
       </div>
-      <div className="flex items-center font-semibold justify-center gap-3 special-detail_page-shadow py-6 rounded-full text-center w-full">
+      <div className="flex items-center font-semibold justify-center gap-3 shadow-lg border-1 border-gray-200 py-6 rounded-full text-center w-full">
         <Route className="text-purple-700" size={30} />
         <span>{distance} km</span>
       </div>
-      <div className="flex items-center justify-center font-semibold gap-3 special-detail_page-shadow py-6 rounded-full text-center w-full">
+      <div className="flex items-center justify-center font-semibold gap-3 shadow-lg  border-1 border-gray-200 py-6 rounded-full text-center w-full">
         <ChartSpline className="text-green-600" size={30} />
         <span>{difficultyLevel.difficulty_level}</span>
       </div>
-      <div className="flex items-center justify-center gap-3 font-semibold special-detail_page-shadow py-6 rounded-full text-center w-full">
+      <div className="flex items-center justify-center gap-3 font-semibold shadow-lg border-1 border-gray-200 py-6 rounded-full text-center w-full">
         <TrafficCone size={30} />
         <span>{normalizedSurface}</span>
       </div>
