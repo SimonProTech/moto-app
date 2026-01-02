@@ -54,7 +54,7 @@ const MapWrapper = memo(
           className="h-full w-full   relative"
           center={position}
           zoom={11}
-          scrollWheelZoom={false}
+          scrollWheelZoom={true}
           maxZoom={13}
           minZoom={6}
         >
