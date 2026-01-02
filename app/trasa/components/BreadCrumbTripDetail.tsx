@@ -11,7 +11,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import Link from "next/link";
-import { ChevronLeft } from "lucide-react";
+import { ArrowLeft, ChevronLeft } from "lucide-react";
 import { ROUTE_REGIONS } from "@/types/app";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -39,18 +39,19 @@ export const BreadCrumbTripDetail = ({
           )}
         >
           <BreadcrumbSeparator className="text-black">
-            <ChevronLeft size={22} />
+            <ChevronLeft className="md:block hidden" />
+            <ArrowLeft className="md:hidden block" />
           </BreadcrumbSeparator>
         </Button>
-        <BreadcrumbItem className="hover:underline">
+        <BreadcrumbItem className="hover:underline md:block hidden">
           <BreadcrumbLink asChild>
             <Link href={`/trasy`}>Wszystkie trasy</Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbSeparator>
+        <BreadcrumbSeparator className="md:block hidden">
           <ChevronLeft />
         </BreadcrumbSeparator>
-        <BreadcrumbItem className="hover:underline">
+        <BreadcrumbItem className="hover:underline md:block hidden">
           <BreadcrumbLink asChild>
             <Link
               href={`/trasy?region=${region.region_name.toString().toLowerCase()}`}
@@ -59,10 +60,13 @@ export const BreadCrumbTripDetail = ({
             </Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
+        <BreadcrumbSeparator className="md:block hidden" />
+        <BreadcrumbItem className="md:block hidden">
           <BreadcrumbPage>{tripName}</BreadcrumbPage>
         </BreadcrumbItem>
+        <div className="ml-auto md:hidden block px-6 py-1 rounded-full bg-white border border-gray-border text-foreground font-medium">
+          {region.region_name.toString()}
+        </div>
       </BreadcrumbList>
     </Breadcrumb>
   );

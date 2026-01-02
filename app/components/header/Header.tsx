@@ -28,7 +28,7 @@ const Header = () => {
           >
             Przeglądaj trasy
           </Link>
-          <button className="lg:hidden cursor-pointer flex">
+          <button className="lg:hidden text-foreground cursor-pointer flex">
             <Menu size={30} className="cursor-pointer" />
           </button>
         </div>

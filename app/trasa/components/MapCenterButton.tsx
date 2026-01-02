@@ -17,7 +17,7 @@ export const MapCenterButton = memo(({ position }: MapCenterButtonProps) => {
     <Button
       onClick={centerMeOnMap}
       variant="fake-btn"
-      className="absolute hover:border hover:border-gray-border cursor-pointer [&_svg:not([class*='size-'])]:size-5 left-2 bottom-2 z-[999] bg-my-white"
+      className="absolute border border-gray-border hover:scale-105 active:bg-black transition-all cursor-pointer [&_svg:not([class*='size-'])]:size-5 left-2 bottom-2 z-[999] bg-my-white"
     >
       <LocateFixed />
     </Button>
