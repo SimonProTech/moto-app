@@ -9,12 +9,15 @@ interface MapCenterButtonProps {
 
 export const MapCenterButton = memo(({ position }: MapCenterButtonProps) => {
   const map = useMap();
-  const centerMeOnMap = () => map.flyTo(position);
+  const centerMeOnMap = () =>
+    map.flyTo(position, 11, {
+      animate: true,
+    });
   return (
     <Button
       onClick={centerMeOnMap}
       variant="fake-btn"
-      className="absolute border border-gray-border hover:shadow-2xl cursor-pointer [&_svg:not([class*='size-'])]:size-5 left-2 bottom-2 z-[999] bg-my-white"
+      className="absolute border border-gray-border hover:scale-105 active:bg-black transition-all cursor-pointer [&_svg:not([class*='size-'])]:size-5 left-2 bottom-2 z-[999] bg-my-white"
     >
       <LocateFixed />
     </Button>

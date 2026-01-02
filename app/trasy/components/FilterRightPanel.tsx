@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/select";
 import { useRouter, useSearchParams } from "next/navigation";
 import { FilterButtonModelOpen } from "@/app/trasy/components/FilterButtonModelOpen";
-import { Separator } from "@/components/ui/separator";
 
 const FilterRightPanel = () => {
   const searchParams = useSearchParams();
