@@ -17,6 +17,8 @@ interface TripDetailsLocationInfoMapWrapperProps {
   startLon: number;
   metaLat: number;
   metaLon: number;
+  startCity: string;
+  endCity: string;
   moto_ride_types: {
     moto_ride: MotoRideName;
   };
@@ -27,6 +29,8 @@ const TripDetailsLocationInfoMapWrapper = ({
   metaLon,
   startLon,
   startLat,
+  startCity,
+  endCity,
   moto_ride_types,
 }: TripDetailsLocationInfoMapWrapperProps) => {
   return (
@@ -36,6 +40,8 @@ const TripDetailsLocationInfoMapWrapper = ({
         metaLon={metaLon}
         metaLat={metaLat}
         startLat={startLat}
+        startCity={startCity}
+        endCity={endCity}
         moto_ride_types={moto_ride_types}
       />
     </div>

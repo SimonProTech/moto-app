@@ -4,8 +4,8 @@ import React from "react";
 import TripDetailsLocationInfoMapWrapper from "@/app/trasa/components/TripDetailsLocationInfoMapWrapper";
 
 interface TripDetailsLocationInfoProps {
-  startCity?: string | null;
-  endCity?: string | null;
+  startCity: string;
+  endCity: string;
   moto_ride_types: {
     moto_ride: MotoRideName;
   };
@@ -36,6 +36,8 @@ export const TripDetailsLocationInfoWrapper = ({
           metaLat={metaLat}
           metaLon={metaLon}
           startLon={startLon}
+          startCity={startCity}
+          endCity={endCity}
           moto_ride_types={moto_ride_types}
         />
 
