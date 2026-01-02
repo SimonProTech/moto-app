@@ -29,11 +29,11 @@ export const FilterMobileView = ({
   };
 
   return (
-    <>
+    <div className="relative z-[99999999999]">
       <div
         onClick={closeModal}
         className={`
-          fixed routes:hidden inset-0 bg-black/10 z-[9999998]
+          fixed routes:hidden inset-0 bg-black/10
           transition-opacity duration-300
           ${isModalOpen ? "opacity-100" : "opacity-0 pointer-events-none"}
         `}
@@ -83,6 +83,6 @@ export const FilterMobileView = ({
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
