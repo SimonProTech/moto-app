@@ -78,7 +78,7 @@ const LANDING_FEATURES = [
 const FeatureGrid = () => {
   return (
     <section className="pb-20 pt-24">
-      <h1 className="text-3xl md:text-4xl font-bold text-foreground">
+      <h1 className="text-3xl md:text-4xl leading-snug font-bold text-foreground">
         Dołącz do Motocrew — ekipy, która łączy motocyklistów w całej Polsce.
         Ponad 200 tras, różne typy moto i wspólna pasja do jazdy, gdzie każdy
         kilometr to nowe doświadczenie i historia do opowiedzenia.
