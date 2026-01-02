@@ -111,7 +111,7 @@ const MapWrapper = memo(
 
                   <div className="flex flex-col">
                     <h2 className="text-base mb-3 font-semibold text-gray-900">
-                      {startCity}
+                      {endCity}
                     </h2>
                     <span className="text-xs text-gray-500 tracking-wide">
                       Punkt zakończenia trasy
