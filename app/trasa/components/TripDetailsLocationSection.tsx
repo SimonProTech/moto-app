@@ -18,7 +18,7 @@ const TripDetailsLocationSection = ({
 }: TripDetailsLocationSectionProps) => {
   const gradient = surfaceGradients[moto_ride_types.moto_ride];
   return (
-    <div className="sm:p-6 p-0 rounded-xl max-h-[400px] bg-white">
+    <div className="sm:p-6 p-0 rounded-xl h-max">
       {/* Timeline wrapper */}
       <div className="relative pl-10 h-full flex flex-col justify-between space-y-10">
         {/* Jedna pionowa linia */}

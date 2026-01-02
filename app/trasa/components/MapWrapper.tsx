@@ -63,7 +63,7 @@ const MapWrapper = memo(
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           <Marker icon={startIcon.icon} position={[startLat, startLon]}>
-            <Popup className="custom-popup">
+            <Popup>
               <div className="flex flex-col gap-3">
                 {/* Header */}
                 <div className="flex items-center gap-4">
@@ -102,7 +102,7 @@ const MapWrapper = memo(
             </Popup>
           </Marker>
           <Marker position={[metaLat, metaLon]} icon={metaIcon.icon}>
-            <Popup className="custom-popup">
+            <Popup>
               <div className="flex flex-col gap-3">
                 <div className="flex items-center gap-4">
                   <div className="px-3 py-1 rounded-full bg-indigo-500 text-my-white text-sm font-medium shadow-sm">
@@ -111,7 +111,7 @@ const MapWrapper = memo(
 
                   <div className="flex flex-col">
                     <h2 className="text-base mb-3 font-semibold text-gray-900">
-                      {startCity}
+                      {endCity}
                     </h2>
                     <span className="text-xs text-gray-500 tracking-wide">
                       Punkt zakończenia trasy

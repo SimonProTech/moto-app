@@ -6,6 +6,11 @@ import { changeNawierzchnia } from "@/helpers/changeNawierzchnia";
 import { Separator } from "@/components/ui/separator";
 import { toHoursAndMinutes } from "@/helpers/toHoursAndMinutes";
 import { Milestone, Route, Timer } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 interface TripCardProps {
   route: RouteInterface;
@@ -41,7 +46,9 @@ const TripCard = ({ route, layout }: TripCardProps) => {
             {styleIcons[route.moto_ride_types.moto_ride]}
           </span>
         )}
-        <span className="text-my-white">{route.moto_ride_types.moto_ride}</span>
+        <span className="text-my-white select-none">
+          {route.moto_ride_types.moto_ride}
+        </span>
       </div>
       <div className="absolute right-3 top-3 bg-black/20 backdrop-blur-sm px-3 rounded-full shadow-md">
         <span className="text-xs font-semibold text-white tracking-wide uppercase">
@@ -54,8 +61,52 @@ const TripCard = ({ route, layout }: TripCardProps) => {
         </span>
       </div>
       <div className="space-y-2 mt-3">
-        <h3 className="font-semibold text-gray-900">{route.trip_name}</h3>
-        <p className="text-sm text-gray-700">{route.trip_description}</p>
+        {route.trip_name.length >= 44 ? (
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <h3
+                title={route.trip_name}
+                className="font-semibold truncate text-gray-900"
+              >
+                {route.trip_name}
+              </h3>
+            </TooltipTrigger>
+            <TooltipContent
+              align="start"
+              side="top"
+              className="bg-my-white border"
+            >
+              {route.trip_name}
+            </TooltipContent>
+          </Tooltip>
+        ) : (
+          <h3
+            title={route.trip_name}
+            className="font-semibold truncate text-gray-900"
+          >
+            {route.trip_name}
+          </h3>
+        )}
+        {route.trip_description.length >= 50 ? (
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <p className="text-sm truncate text-gray-700">
+                {route.trip_description}
+              </p>
+            </TooltipTrigger>
+            <TooltipContent
+              align="start"
+              side="top"
+              className="bg-my-white border"
+            >
+              {route.trip_description}
+            </TooltipContent>
+          </Tooltip>
+        ) : (
+          <p className="text-sm truncate text-gray-700">
+            {route.trip_description}
+          </p>
+        )}
       </div>
       <Separator className="my-3" />
       <div className="flex items-center justify-center gap-4 text-sm text-gray-700 mt-2">

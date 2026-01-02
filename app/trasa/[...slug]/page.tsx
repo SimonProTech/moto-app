@@ -5,6 +5,7 @@ import TripDetailsTopHeader from "@/app/trasa/components/TripDetailsTopHeader";
 import TripDetailsMiddleSection from "@/app/trasa/components/TripDetailsMiddleSection";
 import { Separator } from "@/components/ui/separator";
 import { TripDetailsLocationInfoWrapper } from "@/app/trasa/components/TripDetailsLocationInfoWrapper";
+import TripSimilarPlaces from "@/app/trasa/components/TripSimilarPlaces";
 
 const Page = async ({ params }: { params: Promise<{ slug: string[] }> }) => {
   const { slug } = await params;
@@ -52,6 +53,13 @@ const Page = async ({ params }: { params: Promise<{ slug: string[] }> }) => {
         endCity={route.ending_city}
         startCity={route.starting_city}
         moto_ride_types={route.moto_ride_types}
+      />
+      <div className="relative w-full">
+        <div className="absolute inset-0 border-t border-gray-300 border-dashed" />
+      </div>
+      <TripSimilarPlaces
+        region={route.route_regions.region_name}
+        diff={route.route_difficulties.difficulty_level}
       />
     </>
   );
