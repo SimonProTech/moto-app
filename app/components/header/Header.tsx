@@ -19,7 +19,7 @@ const Header = () => {
       <div
         className={`py-5 mx-auto max-w-[1150px] pl-5 pr-5 text-my-white flex justify-between items-center`}
       >
-        <Logo isPathValid={isPathValid} />
+        <Logo />
         <HeaderLinks isPathValid={isPathValid} />
         <div className="flex items-center gap-7">
           <Link
@@ -28,7 +28,9 @@ const Header = () => {
           >
             Przeglądaj trasy
           </Link>
-          <button className="lg:hidden text-foreground cursor-pointer flex">
+          <button
+            className={`lg:hidden ${isPathValid ? "text-white" : "text-foreground"} cursor-pointer flex`}
+          >
             <Menu size={30} className="cursor-pointer" />
           </button>
         </div>

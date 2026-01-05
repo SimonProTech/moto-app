@@ -64,7 +64,7 @@ export const BreadCrumbTripDetail = ({
         <BreadcrumbItem className="md:block hidden">
           <BreadcrumbPage>{tripName}</BreadcrumbPage>
         </BreadcrumbItem>
-        <div className="ml-auto md:hidden block px-6 py-1 rounded-full bg-white border border-gray-border text-foreground font-medium">
+        <div className="ml-auto md:hidden block px-6 py-1 rounded-full bg-my-white border border-gray-border text-foreground font-medium">
           {region.region_name.toString()}
         </div>
       </BreadcrumbList>

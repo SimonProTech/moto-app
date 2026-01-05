@@ -22,6 +22,9 @@ export interface RouteInterface {
   route_regions: ROUTE_REGIONS;
   route_difficulties: ROUTE_DIFFICULTIES;
   moto_ride_types: MOTO_RIDE_TYPES;
+  distance_osrm: number;
+  duration_osrm: number;
+  updated_osrm: string;
 }
 
 export interface MOTO_RIDE_TYPES {

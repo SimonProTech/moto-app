@@ -56,12 +56,12 @@ export async function fetchAllRoutes(
         });
         break;
       case "short":
-        qeuryFilters = qeuryFilters.order("distance", {
+        qeuryFilters = qeuryFilters.order("distance_osrm", {
           ascending: true,
         });
         break;
       case "long":
-        qeuryFilters = qeuryFilters.order("distance", {
+        qeuryFilters = qeuryFilters.order("distance_osrm", {
           ascending: false,
         });
         break;
@@ -79,13 +79,17 @@ export async function fetchAllRoutes(
   if (searchParams?.distance) {
     switch (searchParams?.distance) {
       case "0-50":
-        qeuryFilters = qeuryFilters.lte("distance", 50);
+        qeuryFilters = qeuryFilters.lte("distance_osrm", 50);
         break;
       case "51-100":
-        qeuryFilters = qeuryFilters.gte("distance", 51).lte("distance", 100);
+        qeuryFilters = qeuryFilters
+          .gte("distance_osrm", 51)
+          .lte("distance_osrm", 100);
         break;
       case "101-150":
-        qeuryFilters = qeuryFilters.gte("distance", 101).lte("distance", 150);
+        qeuryFilters = qeuryFilters
+          .gte("distance_osrm", 101)
+          .lte("distance_osrm", 150);
         break;
 
       default:
@@ -94,15 +98,15 @@ export async function fetchAllRoutes(
         const maxN = Number(maxNum);
 
         if (!isNaN(minN)) {
-          qeuryFilters = qeuryFilters.gte("distance", minN);
+          qeuryFilters = qeuryFilters.gte("distance_osrm", minN);
         }
         if (!isNaN(maxN)) {
-          qeuryFilters = qeuryFilters.lte("distance", maxN);
+          qeuryFilters = qeuryFilters.lte("distance_osrm", maxN);
         }
 
         qeuryFilters = qeuryFilters
-          .gte("distance", minNum)
-          .lte("distance", maxNum);
+          .gte("distance_osrm", minNum)
+          .lte("distance_osrm", maxNum);
         break;
     }
   }
@@ -147,7 +151,20 @@ export async function fetchAllRoutes(
 
   const { data, error, count } = await qeuryFilters;
 
-  if (error) throw new Error(error.message);
+  if (error) {
+    console.error("Supabase error:", error.message);
+    return {
+      data: [],
+      count: 0,
+    };
+  }
+
+  if (!data) {
+    return {
+      data: [],
+      count: 0,
+    };
+  }
 
   return {
     data: (data as RouteInterface[]) ?? [],

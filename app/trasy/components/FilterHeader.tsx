@@ -6,11 +6,12 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const FilterHeader = () => {
   const { countRoutes } = useCountRoutesStore();
+  console.log(countRoutes);
 
   return (
     <h2 className="flex items-center gap-2">
       Dostępne trasy:
-      {!countRoutes ? (
+      {countRoutes === null ? (
         <Skeleton className="w-16 h-6" />
       ) : (
         <span className="font-bold"> {countRoutes} tras</span>

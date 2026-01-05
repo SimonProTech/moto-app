@@ -98,13 +98,11 @@ const FeatureGrid = () => {
               <Link
                 href={feature.action.href}
                 aria-label={feature.action.label}
-                className="py-2 hover:scale-95 hover:shadow-none translate-y-1 hover:translate-y-2 shadow-2xl shadow-ring font-medium transition-all px-6 w-full text-center rounded-xl bg-ring duration-500 text-foreground"
+                className="py-2 hover:scale-95 hover:shadow-none translate-y-1 hover:translate-y-2 shadow-sm shadow-ring font-medium transition-all px-6 w-full text-center rounded-xl bg-ring duration-500 text-foreground"
               >
                 Przeglądaj trasy
               </Link>
-            ) : (
-              ""
-            )}
+            ) : null}
           </div>
         ))}
       </div>
