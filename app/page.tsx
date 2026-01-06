@@ -5,6 +5,8 @@ import LandingPage from "@/app/components/main-page/LandingPage";
 import LandingPageMarquee from "@/app/components/main-page/LandingPageMarquee";
 import FeatureGrid from "@/app/components/main-page/FeatureGrid";
 import LatestAddedTrips from "@/app/components/main-page/LatestAddedTrips";
+import { MainPageMood } from "@/app/components/main-page/MainPageMood";
+import { FAQ } from "@/app/components/main-page/Faq";
 
 export default function Home() {
   return (
@@ -18,6 +20,8 @@ export default function Home() {
       <Wrapper>
         <FeatureGrid />
         <LatestAddedTrips />
+        <MainPageMood />
+        <FAQ />
       </Wrapper>
     </>
   );

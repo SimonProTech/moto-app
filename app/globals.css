@@ -6,6 +6,7 @@
 :root {
     --font-tasa: "TASA Orbiter", sans-serif;
     --font-playfair: "Playfair Display", serif;
+    --font-instrument: "Instrument Serif", serif;
     --radius: 0.625rem;
     --background: #010101;
     --foreground: oklch(0.145 0 0);
@@ -48,6 +49,7 @@
     --color-foreground: var(--foreground);
     --font-sans: var(--font-tasa);
     --font-mono: var(--font-playfair);
+    --font-instrument: var(--font-instrument);
     --color-my-white: var(--my-white);
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
