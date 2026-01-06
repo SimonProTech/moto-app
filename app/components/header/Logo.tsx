@@ -2,20 +2,20 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const Logo = ({ isPathValid }: { isPathValid: boolean }) => {
+const Logo = () => {
   return (
     <Link
       href="/"
-      className={`flex ${isPathValid ? "text-my-white" : "text-black"}  underline transition-all tracking-tight -space-x-2 items-center h-10`}
+      className={`flex underline w-[210px] relative h-14 transition-all tracking-tight items-center`}
     >
       <Image
-        src="/assets/header/logo.png"
+        src="/logo.png"
+        objectFit="cover"
+        className="select-none"
         alt="logo strony motocrew.pl"
-        width={90}
-        height={90}
+        fill
         priority
       />
-      <span>MotoCrew</span>
     </Link>
   );
 };

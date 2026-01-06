@@ -10,7 +10,7 @@ import { Separator } from "@/components/ui/separator";
 
 interface AllTripsProps {
   routes: RouteInterface[];
-  count: number | null;
+  count: number;
 }
 
 const AllTrips = ({ routes, count }: AllTripsProps) => {
@@ -26,12 +26,18 @@ const AllTrips = ({ routes, count }: AllTripsProps) => {
       <div
         className={`${layout === "grid" ? "grid grid-cols-1 md:grid-cols-2 gap-5" : "flex flex-col space-y-5"}`}
       >
-        {routes.map((route) => (
-          <TripCard layout={layout} key={route.u_id} route={route} />
-        ))}
+        {routes.length <= 0 ? (
+          <div>nic</div>
+        ) : (
+          routes.map((route) => (
+            <TripCard layout={layout} key={route.u_id} route={route} />
+          ))
+        )}
       </div>
-      <Separator className="my-10" />
-      <AllRoutesPagination count={count as number} pageSize={26} />
+      {routes.length > 0 ? <Separator className="my-10" /> : null}
+      {routes.length > 0 ? (
+        <AllRoutesPagination count={count} pageSize={26} />
+      ) : null}
     </div>
   );
 };

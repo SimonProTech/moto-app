@@ -91,7 +91,10 @@ export const FilterDistance = ({ className, ...props }: SliderProps) => {
               <Button
                 size="sm"
                 variant="destructive"
-                onClick={clearSelectedFilter}
+                onClick={() => {
+                  clearSelectedFilter();
+                  setShowSlider(false);
+                }}
                 className="mt-2 w-max cursor-pointer"
               >
                 Wyczyść filtry

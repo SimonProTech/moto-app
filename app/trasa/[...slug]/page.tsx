@@ -6,6 +6,7 @@ import TripDetailsMiddleSection from "@/app/trasa/components/TripDetailsMiddleSe
 import { Separator } from "@/components/ui/separator";
 import { TripDetailsLocationInfoWrapper } from "@/app/trasa/components/TripDetailsLocationInfoWrapper";
 import TripSimilarPlaces from "@/app/trasa/components/TripSimilarPlaces";
+import { TripNavigationLinks } from "@/app/trasa/components/TripNavigationLinks";
 
 const Page = async ({ params }: { params: Promise<{ slug: string[] }> }) => {
   const { slug } = await params;
@@ -16,14 +17,22 @@ const Page = async ({ params }: { params: Promise<{ slug: string[] }> }) => {
   }
 
   const normalizedTripName = decodeURIComponent(tripName).replace(/-/g, " ");
-  const route = await fetchSingleRoute({
-    id,
-    tripName: normalizedTripName,
-  });
+
+  const [route] = await Promise.all([
+    fetchSingleRoute({
+      id,
+      tripName: normalizedTripName,
+    }),
+  ]);
 
   if (!route) {
     return notFound();
   }
+
+  const distance = {
+    distance_osrm: route.distance_osrm,
+    duration_osrm: route.duration_osrm,
+  };
 
   return (
     <>
@@ -40,7 +49,8 @@ const Page = async ({ params }: { params: Promise<{ slug: string[] }> }) => {
       </div>
       <TripDetailsMiddleSection
         difficultyLevel={route.route_difficulties}
-        distance={route.distance}
+        distance={distance}
+        db_distance={route.distance}
         duration={route.trip_time}
         surface={route.route_surfaces}
       />
@@ -54,9 +64,13 @@ const Page = async ({ params }: { params: Promise<{ slug: string[] }> }) => {
         startCity={route.starting_city}
         moto_ride_types={route.moto_ride_types}
       />
-      <div className="relative w-full">
-        <div className="absolute inset-0 border-t border-gray-300 border-dashed" />
-      </div>
+      <TripNavigationLinks
+        GPS_start_lon={route.GPS_start_lon}
+        GPS_meta_lat={route.GPS_meta_lat}
+        GPS_meta_lot={route.GPS_meta_lon}
+        GPS_start_lat={route.GPS_start_lat}
+      />
+
       <TripSimilarPlaces
         region={route.route_regions.region_name}
         diff={route.route_difficulties.difficulty_level}

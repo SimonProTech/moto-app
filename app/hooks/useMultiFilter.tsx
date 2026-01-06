@@ -15,6 +15,13 @@ export const useMultiFilter = (paramName: string) => {
       newParams.set(paramName, values.join(","));
     }
 
+    const keys = Array.from(newParams.keys());
+    const onlyPage = keys.length === 1 && keys[0] === "page";
+
+    if (!onlyPage) {
+      newParams.delete("page");
+    }
+
     router.push(`?${newParams.toString()}`, { scroll: false });
   };
 

@@ -17,7 +17,7 @@ const LANDING_FEATURES = [
   {
     id: 1,
     icon: <MapPinned size={40} />,
-    title: "200+ tras w całej Polsce",
+    title: "550+ tras w całej Polsce",
     description:
       "Od Bałtyku po Bieszczady — odkrywaj sprawdzone trasy z lokalnymi atrakcjami.",
   },
@@ -80,8 +80,12 @@ const FeatureGrid = () => {
     <section className="pb-20 pt-24">
       <h1 className="text-3xl md:text-4xl leading-snug font-bold text-foreground">
         Dołącz do Motocrew — ekipy, która łączy motocyklistów w całej Polsce.
-        Ponad 200 tras, różne typy moto i wspólna pasja do jazdy, gdzie każdy
-        kilometr to nowe doświadczenie i historia do opowiedzenia.
+        Ponad{" "}
+        <span className="font-instrument rounded-xl italic text-indigo-600">
+          550+
+        </span>{" "}
+        tras, różne typy moto i wspólna pasja do jazdy, gdzie każdy kilometr to
+        nowe doświadczenie i historia do opowiedzenia.
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
         {LANDING_FEATURES.map((feature) => (
@@ -98,13 +102,11 @@ const FeatureGrid = () => {
               <Link
                 href={feature.action.href}
                 aria-label={feature.action.label}
-                className="py-2 hover:scale-95 hover:shadow-none translate-y-1 hover:translate-y-2 shadow-2xl shadow-ring font-medium transition-all px-6 w-full text-center rounded-xl bg-ring duration-500 text-foreground"
+                className="py-2 hover:scale-95 hover:shadow-none translate-y-1 hover:translate-y-2 shadow-sm shadow-ring font-medium transition-all px-6 w-full text-center rounded-xl bg-ring duration-500 text-foreground"
               >
                 Przeglądaj trasy
               </Link>
-            ) : (
-              ""
-            )}
+            ) : null}
           </div>
         ))}
       </div>

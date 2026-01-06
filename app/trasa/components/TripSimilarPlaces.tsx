@@ -25,7 +25,10 @@ const TripSimilarPlaces = async ({ diff, region }: TripSimilarPlacesProps) => {
   const routes = shuffleArray(data, seed).slice(0, 8);
 
   return (
-    <section className="mt-30 mb-10 relative">
+    <section className="mt-20 mb-10 relative">
+      <div className="relative pb-20 w-full">
+        <div className="absolute inset-0 border-t border-gray-300 border-dashed" />
+      </div>
       <h2 className="text-xl select-none font-bold mb-6 text-foreground">
         Sprawdź podobne trasy
       </h2>

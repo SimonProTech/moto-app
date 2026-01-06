@@ -15,6 +15,7 @@ const useFilter = ({ paramName }: UseFilterProps) => {
 
     if (normalizedValue === getCurrentParamUrl) {
       newParams.delete(paramName);
+      newParams.delete("page");
       return router.push(`?${newParams.toString()}`, {
         scroll: false,
       });
@@ -22,6 +23,16 @@ const useFilter = ({ paramName }: UseFilterProps) => {
 
     if (normalizedValue) {
       newParams.set(paramName, normalizedValue);
+
+      const keys = Array.from(newParams.keys());
+      const onlyPage = keys.length === 1 && keys[0] === "page";
+
+      console.log(onlyPage);
+
+      if (!onlyPage) {
+        newParams.delete("page");
+      }
+
       return router.push(`?${newParams.toString()}`, {
         scroll: false,
       });
@@ -32,13 +43,13 @@ const useFilter = ({ paramName }: UseFilterProps) => {
     const newParams = new URLSearchParams(params.toString());
     newParams.delete(paramName);
     const queryString = newParams.toString();
-    return router.push(queryString ? `?${queryString}` : ".", {
+    return router.push(queryString ? `?${queryString}` : "/trasy", {
       scroll: false,
     });
   };
 
   const clearAllFilters = () => {
-    return router.push("/");
+    return router.push("/trasy");
   };
 
   return {

@@ -1,7 +1,7 @@
 import { create } from "zustand/index";
 
 interface Counts {
-  countRoutes: number;
+  countRoutes: number | null;
 }
 
 interface CountsActionStore {
@@ -10,7 +10,7 @@ interface CountsActionStore {
 
 export const useCountRoutesStore = create<CountsActionStore & Counts>(
   (setState, getState) => ({
-    countRoutes: 0,
+    countRoutes: null,
     setNewCountRoutes: ({ countRoutes }) =>
       setState(() => ({
         countRoutes,
