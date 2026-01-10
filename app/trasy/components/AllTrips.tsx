@@ -7,6 +7,7 @@ import { useCountRoutesStore } from "@/app/store/countRoutes";
 import TripCard from "@/app/trasy/components/TripCard";
 import AllRoutesPagination from "@/app/trasy/components/AllRoutesPagination";
 import { Separator } from "@/components/ui/separator";
+import TripsNotFound from "@/app/trasy/components/TripsNotFound";
 
 interface AllTripsProps {
   routes: RouteInterface[];
@@ -27,7 +28,7 @@ const AllTrips = ({ routes, count }: AllTripsProps) => {
         className={`${layout === "grid" ? "grid grid-cols-1 md:grid-cols-2 gap-5" : "flex flex-col space-y-5"}`}
       >
         {routes.length <= 0 ? (
-          <div>nic</div>
+          <TripsNotFound />
         ) : (
           routes.map((route) => (
             <TripCard layout={layout} key={route.u_id} route={route} />
