@@ -22,6 +22,9 @@ export const fetchOpenMeteoElavation = async ({
   try {
     const res = await fetch(
       `https://router.project-osrm.org/route/v1/driving/${GPS_start_lon},${GPS_start_lat};${GPS_meta_lon},${GPS_meta_lat}?overview=full&geometries=geojson&steps=true`,
+      {
+        next: { revalidate: 60 * 60 * 24 * 30 }, // 30 dni
+      },
     );
 
     if (!res.ok) {
