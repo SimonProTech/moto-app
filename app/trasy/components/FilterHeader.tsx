@@ -6,7 +6,6 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const FilterHeader = () => {
   const { countRoutes } = useCountRoutesStore();
-  console.log(countRoutes);
 
   return (
     <h2 className="flex items-center gap-2">
