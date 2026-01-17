@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import SliderWrapper from "./SliderWrapper";
+import { SearchTripsButton } from "@/app/components/common/SearchTripsButton";
 
 const LandingPage = () => {
   return (
@@ -17,12 +18,7 @@ const LandingPage = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <Link
-            href="/trasy"
-            className="py-2 hover:scale-95 font-medium transition-all px-6 rounded-full bg-ring duration-500 text-foreground"
-          >
-            Przeglądaj trasy
-          </Link>
+          <SearchTripsButton />
           <Link
             href="/coming-soon"
             className="py-2 px-6 border-my-white border-1 rounded-full duration-500 hover:scale-95 transition-all"

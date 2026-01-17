@@ -12,6 +12,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
+import { SearchTripsButton } from "@/app/components/common/SearchTripsButton";
 
 const LANDING_FEATURES = [
   {
@@ -98,15 +99,7 @@ const FeatureGrid = () => {
               {feature.title}
             </h3>
             <p className="text-md text-gray-700">{feature.description}</p>
-            {feature.action ? (
-              <Link
-                href={feature.action.href}
-                aria-label={feature.action.label}
-                className="py-2 hover:scale-95 hover:shadow-none translate-y-1 hover:translate-y-2 shadow-sm shadow-ring font-medium transition-all px-6 w-full text-center rounded-xl bg-ring duration-500 text-foreground"
-              >
-                Przeglądaj trasy
-              </Link>
-            ) : null}
+            {feature.action ? <SearchTripsButton /> : null}
           </div>
         ))}
       </div>

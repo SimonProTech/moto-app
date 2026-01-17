@@ -2,18 +2,25 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const Logo = () => {
+interface LogoProps {
+  width?: number;
+  height?: number;
+  location: "header" | "footer";
+}
+
+const Logo = ({ height = 20, width = 80, location }: LogoProps) => {
   return (
     <Link
       href="/"
-      className={`flex underline w-[210px] relative h-14 transition-all tracking-tight items-center`}
+      className={`${location === "header" ? "px-3" : "px-0"} relative`}
     >
       <Image
         src="/logo.png"
-        objectFit="cover"
+        objectFit="contain"
         className="select-none"
         alt="logo strony motocrew.pl"
-        fill
+        width={width}
+        height={height}
         priority
       />
     </Link>

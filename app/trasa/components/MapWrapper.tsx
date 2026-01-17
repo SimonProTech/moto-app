@@ -65,7 +65,7 @@ const MapWrapper = memo(
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           <MapMarker
-            icon={startIcon.icon}
+            icon={metaIcon.icon}
             metaLat={metaLat}
             metaLon={metaLon}
             startLat={startLat}
@@ -73,7 +73,7 @@ const MapWrapper = memo(
             type="meta"
           />
           <MapMarker
-            icon={metaIcon.icon}
+            icon={startIcon.icon}
             metaLat={metaLat}
             metaLon={metaLon}
             startLat={startLat}
