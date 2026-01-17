@@ -8,7 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
-import { BadgeQuestionMark } from "lucide-react";
+import { BadgeQuestionMark, Mail } from "lucide-react";
 import Link from "next/link";
 
 type Category =
@@ -183,9 +183,19 @@ export function FAQ() {
 
         <Link
           href="/kontakt"
-          className="px-6 py-3 rounded-md bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition whitespace-nowrap"
+          className="relative px-6 py-3 hover:w-[240px] w-[209px]  flex items-center gap-4 rounded-2xl transition-all bg-indigo-500 text-primary-foreground font-medium whitespace-nowrap group"
         >
           Skontaktuj się ze mną
+          <Mail
+            className="
+      absolute right-4
+      top-1/2 -translate-y-1/2
+      opacity-0 translate-x-3
+      transition-all duration-300 ease-out
+      group-hover:scale-105
+      group-hover:opacity-100 group-hover:translate-x-0
+    "
+          />
         </Link>
       </section>
     </section>
