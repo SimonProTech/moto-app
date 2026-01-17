@@ -24,7 +24,7 @@ const LandingPageMarquee = () => {
         autoFill
         speed={50}
         gradientColor="#c7ffd8"
-        className="z-40 h-24 border border-black cursor-default font-medium w-full text-foreground"
+        className="z-40 h-24 cursor-default font-medium w-full text-foreground"
       >
         <div className="flex items-center whitespace-nowrap text-[15px] md:text-base text-black/80">
           {INFO_MARQUEE.map((item) => (

@@ -18,8 +18,6 @@ export const TripNavigationLinks = ({
   const googleUrl = `https://www.google.com/maps/dir/?api=1&origin=${GPS_start_lat},${GPS_start_lon}&destination=${GPS_meta_lat},${GPS_meta_lot}`;
   const appleUrl = `http://maps.apple.com/?saddr=${GPS_start_lat},${GPS_start_lon}&daddr=${GPS_meta_lat},${GPS_meta_lot}`;
 
-  console.log(navigator);
-
   return (
     <div className="flex flex-col md:flex-row items-center justify-center gap-4">
       {/* Waze */}
