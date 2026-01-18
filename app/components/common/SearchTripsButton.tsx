@@ -1,12 +1,17 @@
 import Link from "next/link";
 import React from "react";
 import { cn } from "@/lib/utils";
+import { Route } from "lucide-react";
 
 interface SearchTripsButtonProps {
   customStyles?: string;
+  type?: "header" | "button";
 }
 
-export const SearchTripsButton = ({ customStyles }: SearchTripsButtonProps) => {
+export const SearchTripsButton = ({
+  customStyles,
+  type = "button",
+}: SearchTripsButtonProps) => {
   return (
     <Link
       href="/trasy"
@@ -14,7 +19,7 @@ export const SearchTripsButton = ({ customStyles }: SearchTripsButtonProps) => {
         `
       px-6 py-2
       relative
-      flex items-center gap-2
+      flex items-center
       group
       font-semibold
       bg-indigo-500
@@ -28,7 +33,13 @@ export const SearchTripsButton = ({ customStyles }: SearchTripsButtonProps) => {
         customStyles,
       )}
     >
-      Przeglądaj trasy
+      <span className={`${type === "header" ? "hidden sm:block" : ""} `}>
+        Przeglądaj trasy
+      </span>
+      <Route
+        className={`${type === "header" ? "sm:hidden block" : "hidden"}`}
+        size={22}
+      />
     </Link>
   );
 };

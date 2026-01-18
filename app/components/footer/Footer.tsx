@@ -10,9 +10,9 @@ export const Footer = () => {
       <Wrapper>
         <div className="relative py-20">
           <Card className="px-10">
-            <div className="flex justify-between items-center">
+            <div className="flex md:flex-row flex-col md:gap-0 gap-2 justify-between items-center">
               <Logo location="footer" width={120} height={40} />
-              <nav className="flex gap-8 text-sm text-muted-foreground">
+              <nav className="flex flex-wrap gap-8 items-center justify-center text-sm text-muted-foreground">
                 <Link
                   href="/o-nas"
                   className="hover:text-foreground transition-colors"
@@ -42,12 +42,12 @@ export const Footer = () => {
 
             <Separator className="mt-0 mb-4" />
 
-            <div className="flex items-center pb-5 justify-between gap-5">
+            <div className="flex md:flex-row flex-col-reverse items-center pb-5 justify-between gap-5">
               <small className="text-sm text-muted-foreground">
                 © {new Date().getFullYear()} MotoCrew. Wszystkie prawa
                 zastrzeżone.
               </small>
-
+              <Separator className="md:hidden block" />
               <div className="flex gap-8 items-center">
                 <Link
                   className="text-sm underline text-muted-foreground hover:text-foreground transition-colors"

@@ -49,7 +49,10 @@ export const CTASection = () => {
                 Zakręty, widoki i drogi stworzone dla motocyklistów.
               </p>
               <div className="mt-5">
-                <SearchTripsButton customStyles="py-3 flex justify-center items-center" />
+                <SearchTripsButton
+                  type="button"
+                  customStyles="py-3 flex justify-center items-center"
+                />
               </div>
             </div>
           </div>

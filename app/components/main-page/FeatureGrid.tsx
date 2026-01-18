@@ -99,7 +99,9 @@ const FeatureGrid = () => {
               {feature.title}
             </h3>
             <p className="text-md text-gray-700">{feature.description}</p>
-            {feature.action ? <SearchTripsButton /> : null}
+            {feature.action ? (
+              <SearchTripsButton customStyles="w-full" type="button" />
+            ) : null}
           </div>
         ))}
       </div>

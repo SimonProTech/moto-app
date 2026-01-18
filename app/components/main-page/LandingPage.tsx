@@ -18,7 +18,10 @@ const LandingPage = () => {
         </div>
 
         <div className="flex items-center lg:max-w w-full lg:flex-row flex-col gap-4">
-          <SearchTripsButton customStyles="w-[60%] lg:w-max justify-center" />
+          <SearchTripsButton
+            type="button"
+            customStyles="w-[60%] lg:w-max justify-center"
+          />
           <Link
             href="/coming-soon"
             className="py-2 px-6 lg:block hidden border-my-white border-1 rounded-full duration-500 hover:scale-95 transition-all"

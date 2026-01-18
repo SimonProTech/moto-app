@@ -26,8 +26,8 @@ const Header = () => {
           <Logo location="header" />
         </div>
         <HeaderLinks pathName={pathName} isPathValid={isPathValid} />
-        <div className="flex items-center gap-4">
-          <SearchTripsButton />
+        <div className="flex items-center gap-2">
+          <SearchTripsButton type="header" />
           <Button
             variant="fake-btn"
             onClick={toggleModal}
