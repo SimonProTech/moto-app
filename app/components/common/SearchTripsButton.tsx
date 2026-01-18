@@ -24,7 +24,7 @@ export const SearchTripsButton = ({ customStyles }: SearchTripsButtonProps) => {
       shadow-[8px_5px_0px_0px] shadow-indigo-300
       transition-all duration-500
       ease-[cubic-bezier(0.68,-0.55,0.265,1.55)]
-      hover:shadow-none`,
+      hover:shadow-[0px_0px_0px_0px]`,
         customStyles,
       )}
     >

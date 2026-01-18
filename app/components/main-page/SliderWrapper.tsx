@@ -85,7 +85,7 @@ const SliderWrapper = () => {
         }),
         Fade(),
       ]}
-      className="w-full cursor-grab rounded-lg"
+      className="w-full border cursor-grab rounded-lg"
     >
       <CarouselContent className="w-[300px] rounded-lg h-52">
         {BG_IMAGES.map(({ id, url, alt }) => (

@@ -8,6 +8,9 @@ import "./globals.css";
 import { Toaster } from "sonner";
 import QueryClientProviderWrapper from "@/app/providers/QueryClientProviderWrapper";
 import { FilterMobileWrapper } from "@/app/trasy/components/FilterMobileWrapper";
+import Header from "@/app/components/header/Header";
+import { Footer } from "@/app/components/footer/Footer";
+import MobileHeader from "@/app/components/header/MobileHeader";
 
 const tasaOrbiter = TASA_Orbiter({
   variable: "--font-tasa",
@@ -43,10 +46,11 @@ export default function RootLayout({
     >
       <body className="relative scroll-smooth">
         <FilterMobileWrapper />
-        <main>
-          <QueryClientProviderWrapper>{children}</QueryClientProviderWrapper>
-          <Toaster />
-        </main>
+        <Header />
+        <MobileHeader />
+        <QueryClientProviderWrapper>{children}</QueryClientProviderWrapper>
+        <Footer />
+        <Toaster />
       </body>
     </html>
   );

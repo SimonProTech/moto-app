@@ -19,7 +19,7 @@ const INFO_MARQUEE = [
 
 const LandingPageMarquee = () => {
   return (
-    <section className="pt-52">
+    <section className="min-lp:pt-32 pt-20">
       <Marquee
         autoFill
         speed={50}

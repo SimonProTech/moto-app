@@ -4,47 +4,57 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Button } from "@/components/ui/button";
+import Header from "@/app/components/header/Header";
+import Wrapper from "@/app/components/Wrapper";
 
 const NotFound = () => {
   const router = useRouter();
-  return (
-    <main className="flex relative h-screen flex-col items-center justify-center bg-background px-6 text-center">
-      <div className="z-20">
-        <h1 className="text-[165px] font-extrabold text-white tracking-tight">
-          404
-        </h1>
-        <p className="mt-4 text-2xl text-gray-200 font-bold">
-          Ta strona nie istnieje.
-        </p>
-        <p className="mt-2 text-md font-medium text-gray-300">
-          Może zboczyłeś z trasy. Wróć na główną drogę.
-        </p>
 
-        <div className="flex flex-col items-center">
-          <Button
-            onClick={() => router.back()}
-            className="mt-6 text-md cursor-pointer rounded-full p-6 hover:bg-my-white duration-500 hover:shadow-2xl bg-ring text-background transition-all"
-          >
-            Wróć do poprzedniej strony
-          </Button>
-          <Link
-            className="mt-4 px-6 py-2 text-md cursor-pointer rounded-full duration-300 bg-indigo-500 text-white hover:bg-indigo-600 transition-all"
-            href="/"
-          >
-            Wróć na stronę główną
-          </Link>
+  return (
+    <main className="min-h-screen overflow-x-hidden bg-white text-black">
+      <Header />
+      <section className="mx-auto lg:px-20 grid lg:pt-0 pt-40 lg:min-h-screen max-w-7xl relative grid-cols-1 lg:grid-cols-2 items-center ">
+        {/* LEFT – TEXT */}
+        <div className="relative pl-10 z-20">
+          <span className="mb-6 block text-sm underline font-medium uppercase tracking-widest text-gray-400">
+            Error 404
+          </span>
+
+          <h1 className="max-w-xl text-5xl font-bold leading-tight md:text-6xl">
+            Nie możemy znaleźć tej strony.
+          </h1>
+
+          <p className="mt-6 max-w-md text-lg text-gray-600">
+            Wygląda na to, że adres jest nieprawidłowy albo strona została
+            przeniesiona.
+          </p>
+
+          <div className="mt-10 flex gap-6">
+            <button
+              onClick={() => router.back()}
+              className="border-b-2 cursor-pointer border-black pb-1 text-lg font-medium transition-opacity hover:opacity-60"
+            >
+              Wróć
+            </button>
+
+            <Link
+              href="/"
+              className="border-b-2 border-indigo-500 pb-1 text-lg font-medium text-indigo-600 transition-opacity hover:opacity-80"
+            >
+              Strona główna
+            </Link>
+          </div>
         </div>
-      </div>
-      <div className="absolute select-none z-10">
-        <Image
-          width={600}
-          height={400}
-          className="opacity-10"
-          src="/assets/not-found/not-found.svg"
-          alt="Strona nie istnieje"
-        />
-      </div>
+        <div className="relative lg:mt-0 mt-10 aspect-video lg:h-[60vh]">
+          <Image
+            src="/assets/not-found/not-found.png"
+            alt="Page not found"
+            fill
+            priority
+            className="object-contain translate-x-0 lg:-translate-x-40"
+          />
+        </div>
+      </section>
     </main>
   );
 };

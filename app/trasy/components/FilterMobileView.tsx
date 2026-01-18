@@ -1,6 +1,6 @@
 "use client";
 
-import { useOpenModel } from "@/app/store/openModal";
+import { useFilterModal } from "@/app/store/openModal";
 import React from "react";
 import { CircleX } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,7 +18,7 @@ import { Separator } from "@/components/ui/separator";
 export const FilterMobileView = ({
   filters,
 }: FilterMobileViewProviderProps) => {
-  const { isModalOpen, closeModal } = useOpenModel();
+  const { isModalOpen, closeModalFn } = useFilterModal();
   const router = useRouter();
   const params = useSearchParams();
 
@@ -31,7 +31,7 @@ export const FilterMobileView = ({
   return (
     <div className="relative z-[99999999999]">
       <div
-        onClick={closeModal}
+        onClick={closeModalFn}
         className={`
           fixed routes:hidden inset-0 bg-black/10
           transition-opacity duration-300
@@ -52,7 +52,7 @@ export const FilterMobileView = ({
         <div className="">
           <div className="flex p-5 jus items-center">
             <Button
-              onClick={closeModal}
+              onClick={closeModalFn}
               className={cn(
                 `[&_svg:not([class*='size-'])]:size-6 cursor-pointer`,
               )}

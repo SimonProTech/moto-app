@@ -5,21 +5,29 @@ interface ModelOpenStore {
 }
 
 interface OpenModelActionStore {
-  setOpenModal: (open: ModelOpenStore) => void;
-  closeModal: () => void;
+  isModalOpen: boolean;
+  openModalFn: () => void;
+  closeModalFn: () => void;
+  toggleModal: () => void;
 }
 
-export const useOpenModel = create<ModelOpenStore & OpenModelActionStore>(
-  (setState) => ({
+export const createModalStore = () =>
+  create<ModelOpenStore & OpenModelActionStore>((setState) => ({
     isModalOpen: false,
-    setOpenModal: (modal) =>
+    openModalFn: () =>
       setState(() => ({
-        isModalOpen: modal.isModalOpen,
+        isModalOpen: true,
       })),
-    closeModal: () => {
+    closeModalFn: () => {
       setState(() => ({
         isModalOpen: false,
       }));
     },
-  }),
-);
+    toggleModal: () =>
+      setState((state) => ({
+        isModalOpen: !state.isModalOpen,
+      })),
+  }));
+
+export const useMobileMenu = createModalStore();
+export const useFilterModal = createModalStore();
