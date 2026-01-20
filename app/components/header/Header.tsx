@@ -1,6 +1,6 @@
 "use client";
 
-import { Menu, XIcon } from "lucide-react";
+import { Menu, User, XIcon } from "lucide-react";
 import Logo from "@/app/components/header/Logo";
 import HeaderLinks from "@/app/components/header/HeaderLinks";
 import { usePathname } from "next/navigation";
@@ -26,8 +26,16 @@ const Header = () => {
           <Logo location="header" />
         </div>
         <HeaderLinks pathName={pathName} isPathValid={isPathValid} />
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-5">
           <SearchTripsButton type="header" />
+          <Button
+            className={cn(
+              `cursor-pointer [&_svg:not([class*='size-'])]:size-5 shrink-0 h-full transition-all hover:bg-gray-200 bg-gray-100`,
+            )}
+            variant="fake-btn"
+          >
+            <User className={cn(`text-foreground`)} />
+          </Button>
           <Button
             variant="fake-btn"
             onClick={toggleModal}
